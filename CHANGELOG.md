@@ -8,5 +8,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Fixed
 
-- v0.0.1 Errors in stopping server
-- v0.0.1 Now the extension does not need the cursor to be on the file before starting
+- v0.0.2 Errors in stopping server
+- v0.0.2 Now the extension does not need the cursor to be on the file before starting

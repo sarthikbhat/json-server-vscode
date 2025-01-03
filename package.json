@@ -2,7 +2,7 @@
   "name": "json-server",
   "displayName": "JSON Server",
   "description": "Easy to use json server, to create a http server from a json file.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sarthikbhat",
   "author": {
     "name": "Sarthik Bhat",
