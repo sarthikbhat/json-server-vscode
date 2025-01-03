@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -8,12 +9,158 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  max-height: 100vh;
+  background-color: #f0f5f9;
 }
 
-header {
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: #f0f5f9;
+  box-sizing: border-box;
+}
+
+
+.dFlex {
+  display: flex;
+  gap: 1rem;
+}
+
+.dFlexCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.bgStyleSides {
+  background: #fff;
+  margin: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #2553b91a;
+  border: 1px solid #2554b92c;
+}
+
+.sideBar {
+  flex: 0.25;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  /* height: 100%; */
+  overflow: auto;
+}
+
+.mainContent::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.mainContent::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.mainContent::-webkit-scrollbar-thumb
+{
+	background-color: #323333ce;
+}
+
+.logoBox {
+  font-size: 1.4rem;
+  gap: 0.4rem !important;
+  padding: 2rem 1.5rem;
+  height: 100%;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 10px;
+  color: #2554b9;
+}
+
+.logoText {
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #323333;
+  margin-top: 1%;
+}
+
+.horizotalLine {
+  content: "";
+  /* position: absolute; */
+  width: 90%;
+  height: 0.1vh;
+  background-color: #32333368;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+li {
+  font-size: 1.1rem;
+  width: 90%;
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+
+  /* background-color: #2554b93e; */
+}
+
+li.active {
+  background-color: #2554b93e;
+  color: #2554b9;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.mainHeader {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.mainApis{
+  margin-top: 2rem;
+  overflow: auto;
+}
+
+pre {
+  background: #2554b90e;
+  border: 1px solid #2554b93e;
+  border-left: 3px solid #2554b9;
+  color: #323333ce;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
+}
+/* Prev */
+
+/* header {
   text-align: center;
   width: 100%;
   color: rgb(14, 81, 175);
@@ -112,4 +259,4 @@ footer {
 footer h3 {
   margin: 0;
   padding: 0;
-}
+} */

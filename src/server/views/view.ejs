@@ -7,70 +7,71 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>JSON Server</h1>
-    </header>
-    <section>
-      <p>Please find below APIs and Methods for your use</p>
-      <section class="method_container">
-        <div>
-          <h3>:: GET</h3>
-          <ul>
-            <% for(var i=0; i < data.length; i++) { %>
-            <li>
-              <a href="<%= data[i] %>" target="_blank"><%= data[i] %></a>
-            </li>
-            <% } %>
-          </ul>
-        </div>
-        <div>
-          <h3>:: POST</h3>
-          <ul>
-            <h4>/* Under Development */</h4>
-            <!-- <% for(var i=0; i < data.length; i++) { %>
-            <li>
-              <a href="<%= data[i] %>" target="_blank"><%= data[i] %></a>
-            </li>
-            <% } %> -->
-          </ul>
-        </div>
-        <div>
-          <h3>:: PUT</h3>
-          <ul>
-            <h4>/* Under Development */</h4>
-            <!-- <% for(var i=0; i < data.length; i++) { %>
-            <li>
-              <a href="<%= data[i] %>" target="_blank"><%= data[i] %></a>
-            </li>
-            <% } %> -->
-          </ul>
-        </div>
-        <div>
-          <h3>:: DELETE</h3>
-          <ul>
-            <h4>/* Under Development */</h4>
-            <!-- <% for(var i=0; i < data.length; i++) { %>
-            <li>
-              <a href="<%= data[i] %>" target="_blank"><%= data[i] %></a>
-            </li>
-            <% } %> -->
-          </ul>
-        </div>
-        <div>
-          <h3>:: PATCH</h3>
-          <ul>
-            <h4>/* Under Development */</h4>
-            <!-- <% for(var i=0; i < data.length; i++) { %>
-            <li>
-              <a href="<%= data[i] %>" target="_blank"><%= data[i] %></a>
-            </li>
-            <% } %> -->
-          </ul>
-        </div>
+    <main class="dFlex">
+      <section class="sideBar bgStyleSides">
+        <nav>
+          <div class="logoBox dFlex">
+            <span class="logo">{}</span>
+            <span class="logoText">JSON Server</span>
+          </div>
+          <div class="horizotalLine"></div>
+          <div class="menu">
+            <ul>
+              <li class="active">GET</li>
+              <li>POST</li>
+              <li>PUT</li>
+              <li>DELETE</li>
+              <li>PATCH</li>
+            </ul>
+          </div>
+        </nav>
       </section>
-    </section>
-    <footer>
-      <h3>Developed and maintained by Sarthik Bhat</h3>
-    </footer>
+      <section class="mainContent bgStyleSides">
+        <div class="mainHeader">
+          Following APIs are available for GET method
+        </div>
+        <div class="mainApis"></div>
+      </section>
+    </main>
+    <script>
+      const data = <%- JSON.stringify(data) %>;
+      let method = "get"
+      let lastActive = "get"
+      setApis()
+      const ulElement = document.querySelector("ul");
+      ulElement.addEventListener("click",e=>{
+        // console.log(e.target)
+        if(e.target.tagName.toLowerCase()=="li"){
+          setApis(e.target.textContent,e.target)
+        }
+      })
+
+      function setApis(method="get",target=null){
+        const mainApis = document.querySelector(".mainApis");
+          mainApis.innerHTML= ""
+          const apis = data[method.toLowerCase()];
+          if(apis && !!apis.length){
+            apis.forEach(api => {
+              const pre = document.createElement('pre');
+              pre.textContent = api
+              mainApis.appendChild(pre)
+            });
+          }
+          else{
+            const pre = document.createElement('pre');
+              pre.textContent = `No APIs found for ${method} method`
+              mainApis.appendChild(pre)
+          }
+
+          if(target!==null){
+            var xpath = `//a[text()='${lastActive}']`;
+            matchingElement = Array.prototype.slice.call(document.getElementsByTagName("LI")).filter(el => el.textContent.trim().toLowerCase() === lastActive)[0];
+            console.log(matchingElement);
+            matchingElement.classList.remove("active")
+            target.classList.add("active")
+          }
+          lastActive=method.toLowerCase();
+      }
+    </script>
   </body>
 </html>

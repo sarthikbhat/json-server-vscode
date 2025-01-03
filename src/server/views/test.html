@@ -4,73 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Server</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>JSON Server</h1>
-    </header>
-    <section>
-      <p>Please find below APIs and Methods for your use</p>
-      <section class="method_container">
-        <div>
-          <h3>:: GET</h3>
-          <ul>
-            <li>
-              <a href="https://localhost:3000/posts"
-                >https://localhost:3000/posts</a
-              >
-            </li>
-            <li>
-              <a href="https://localhost:3000/posts"
-                >https://localhost:3000/comments</a
-              >
-            </li>
-            <li><a>https://localhost:3000/author</a></li>
-          </ul>
+    <main class="dFlex">
+      <section class="sideBar bgStyleSides">
+        <nav>
+          <div class="logoBox dFlex">
+            <span class="logo">{}</span>
+            <span class="logoText">JSON Server</span>
+          </div>
+          <div class="horizotalLine"></div>
+          <div class="menu">
+            <ul>
+              <li class="active">GET</li>
+              <li>POST</li>
+              <li>PUT</li>
+              <li>DELETE</li>
+              <li>PATCH</li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      <section class="mainContent bgStyleSides">
+        <div class="mainHeader">
+          Following APIs are available for GET method
         </div>
-        <div>
-          <h3>:: POST</h3>
-          <ul>
-            <li><a>https://localhost:3000/posts</a></li>
-            <li><a>https://localhost:3000/comments</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>:: PUT</h3>
-          <ul>
-            <li><a>https://localhost:3000/posts</a></li>
-            <li><a>https://localhost:3000/comments</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>:: DELETE</h3>
-          <ul>
-            <li><a>https://localhost:3000/posts</a></li>
-            <li><a>https://localhost:3000/comments</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>:: PATCH</h3>
-          <ul>
-            <li><a>https://localhost:3000/posts</a></li>
-            <li><a>https://localhost:3000/comments</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-            <li><a>https://localhost:3000/author</a></li>
-          </ul>
+        <div class="mainApis">
+          <pre> https://localhost:27363/api_1 </pre>
+          <pre> https://localhost:27363/api_1 </pre>
+          <pre> https://localhost:27363/api_1 </pre>
+          <pre> https://localhost:27363/api_1 </pre>
         </div>
       </section>
-    </section>
-    <footer>
-      <h3>Developed and maintained by Sarthik Bhat</h3>
-    </footer>
+    </main>
   </body>
 </html>
