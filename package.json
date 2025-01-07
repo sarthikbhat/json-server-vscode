@@ -2,7 +2,7 @@
   "name": "json-server",
   "displayName": "JSON Server",
   "description": "Easy to use json server, to create a http server from a json file.",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publisher": "sarthikbhat",
   "author": {
     "name": "Sarthik Bhat",
@@ -12,6 +12,10 @@
     "vscode": "^1.91.0"
   },
   "categories": [
+    "Programming Languages",
+    "Testing",
+    "Visualization",
+    "Debuggers",
     "Other"
   ],
   "keywords": [
@@ -24,26 +28,27 @@
   ],
   "preview": true,
   "galleryBanner": {
-    "color": "#0e51af",
-    "theme": "dark"
+    "color": "##F2F2F2",
+    "theme": "light"
   },
   "activationEvents": [
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
   "license": "MIT",
-  "icon": "images/icon.png",
+  "icon": "images/Frame.png",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/sarthikbhat/json-server-vscode.git"
   },
   "scripts": {
-    "vscode:package":"vsce package",
-    "vscode:prepublish": "npm run package",
+    "package": "vsce package",
+    "deploy": "vsce publish -p",
     "start": "nodemon src/server/server.ts",
     "compile": "webpack",
     "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "package:watch": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
@@ -69,6 +74,7 @@
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
+    "vsce": "^2.15.0",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },

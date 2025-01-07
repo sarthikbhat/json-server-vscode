@@ -2,6 +2,11 @@
 
 All notable changes to the "JSON server" extension will be documented in this file.
 
+## v0.0.3
+
+### Added
+- v0.0.3 Icon and gallery banner in marketplace
+
 ## v0.0.2
 
 ### Fixed
